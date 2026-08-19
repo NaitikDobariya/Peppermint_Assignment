@@ -49,6 +49,15 @@ If you prefer using a containerized workflow (or run into dependency issues on y
 
 ## Installation & Execution
 
+## Installation & Execution
+
+### 1. Clone the Repository
+Open your terminal and clone the repository to your local machine:
+```bash
+git clone [https://github.com/NaitikDobariya/Peppermint_Assignment.git](https://github.com/NaitikDobariya/Peppermint_Assignment.git)
+cd Peppermint_Assignment
+```
+
 ### 1. Build the Planner
 
 Open your terminal, navigate to the root of the workspace, and run the standard CMake build steps:
