@@ -1,0 +1,21 @@
+# C++ build artifacts
+build/
+CMakeCache.txt
+CMakeFiles/
+Makefile
+compile_commands.json
+
+
+# Python artifacts
+__pycache__/
+*.pyc
+.venv/
+
+# results/
+*.json
+# # BUT keep the floor plan network!
+# !data/floor_plan.json
+
+# OS and Editor files
+.DS_Store
+.vscode/
