@@ -55,7 +55,7 @@ If you prefer using a containerized workflow (or run into dependency issues on y
 Open your terminal and clone the repository to your local machine:
 
 ```bash
-git clone [https://github.com/NaitikDobariya/Peppermint_Assignment.git](https://github.com/NaitikDobariya/Peppermint_Assignment.git)
+git clone https://github.com/NaitikDobariya/Peppermint_Assignment.git
 cd Peppermint_Assignment
 ```
 
