@@ -53,12 +53,13 @@ If you prefer using a containerized workflow (or run into dependency issues on y
 
 ### 1. Clone the Repository
 Open your terminal and clone the repository to your local machine:
+
 ```bash
 git clone [https://github.com/NaitikDobariya/Peppermint_Assignment.git](https://github.com/NaitikDobariya/Peppermint_Assignment.git)
 cd Peppermint_Assignment
 ```
 
-### 1. Build the Planner
+### 2. Build the Planner
 
 Open your terminal, navigate to the root of the workspace, and run the standard CMake build steps:
 
@@ -70,7 +71,7 @@ make -j4
 
 ```
 
-### 2. Run the Simulation
+### 3. Run the Simulation
 
 Execute the built binary. It will load the graph, process the hardcoded queries, evaluate drivability based on the vehicle's turning radius, and dump the results as JSON files:
 
@@ -79,7 +80,7 @@ Execute the built binary. It will load the graph, process the hardcoded queries,
 
 ```
 
-### 3. Visualize the Routes
+### 4. Visualize the Routes
 
 Once the JSON routes are generated, use the Python script to plot them. The output images will be saved in the `/images` directory:
 
