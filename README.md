@@ -1,8 +1,11 @@
 # Peppermint Robotics: Lane Navigation Planner
 
-This project implements a standalone, C++17 based lane navigation planner for material handling robots operating in structured environments like hospitals or hotels. Instead of relying on unpredictable free-space planning, we constrain the robot to a predefined, directed graph of lanes. This ensures that the robot behaves predictably around people and takes the exact same route on Thursday that it took on Monday.
+This project implements a standalone, C++17 based lane navigation planner for material handling robots operating in structured environments like hospitals or hotels. Instead of relying on unpredictable free-space planning, we constrain the robot to a predefined, directed graph of lanes. This ensures that the robot behaves predictably around people and takes the exact same route everyday.
 
-The system features a simulated floor plan with over 42 nodes, including complex topologies like loops, one-way corridors, and lifts. The whole software stack is built to be lightweight, with zero external dependencies for the core planner itself.
+<img width="2400" height="1600" alt="image" src="https://github.com/user-attachments/assets/c7adbdbd-7a8e-4245-818d-4b4dbfbbba59" />
+
+
+The system features a simulated floor plan with over 42 nodes, including topologies like loops, one-way corridors, and lifts. The whole thing is built to be lightweight, with minimal/zero external dependencies for the core planner itself.
 
 ## Repository Structure
 
