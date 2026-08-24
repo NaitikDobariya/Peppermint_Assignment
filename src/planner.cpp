@@ -11,7 +11,7 @@ struct AStarNode {
 
     // Strict deterministic tie-breaker:
     // If f_scores are equal, fall back to node_id comparison.
-    // Guarantees identical expansion order across compilers & platforms (Task 3).
+    // Guarantees identical expansion order across compilers & platforms.
     bool operator>(const AStarNode& other) const {
         if (std::abs(f_score - other.f_score) > 1e-7) {
             return f_score > other.f_score;
@@ -20,14 +20,19 @@ struct AStarNode {
     }
 };
 
+
+// Declare the network first
 LanePlanner::LanePlanner(const LaneNetwork& network) : network_(network) {}
 
+// Pythagoras
 double LanePlanner::heuristic(const Node& current, const Node& goal) const {
     double dx = current.x - goal.x;
     double dy = current.y - goal.y;
     return std::sqrt(dx * dx + dy * dy);
 }
 
+
+// Cost calculator function
 double LanePlanner::calculate_edge_cost(const Node& current_node, const LaneEdge& edge, const Node& next_node) const {
     // 1. Distance cost
     double cost = edge.length;
@@ -38,7 +43,7 @@ double LanePlanner::calculate_edge_cost(const Node& current_node, const LaneEdge
     heading_diff = std::abs(heading_diff);
     cost += 1.5 * heading_diff; 
 
-    // 3. Lane width preference (penalize narrow channels)
+    // 3. Lane width preference (penalize narrow channels), inverse thing is not very good tho
     if (edge.lane_width > 0.0) {
         cost += (1.0 / edge.lane_width);
     }
@@ -49,6 +54,7 @@ double LanePlanner::calculate_edge_cost(const Node& current_node, const LaneEdge
     return cost;
 }
 
+// Dummy method depends on the one comming after it to do the "same" thing
 PlanResult LanePlanner::plan_route(const std::string& start_name, const std::string& goal_name) {
     const Node* start_node = network_.get_node_by_name(start_name);
     const Node* goal_node = network_.get_node_by_name(goal_name);
@@ -64,6 +70,8 @@ PlanResult LanePlanner::plan_route(const std::string& start_name, const std::str
     return plan_route(start_node->id, goal_node->id);
 }
 
+
+// The main stuff
 PlanResult LanePlanner::plan_route(int start_id, int goal_id) {
     PlanResult result;
 
